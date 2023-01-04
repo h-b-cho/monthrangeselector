@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.2/jquery.mobile.min.js"></script>
+    <link href="http://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+    <script src="jqm-mmp.js"></script>
+    <style>
+        .selected {
+            background-color: #ababab !important;
+        }
+        #btnPreviousYear,
+        #btnNextYear,
+        #yearLabel {
+            width: 0;
+            height: 0;
+            visibility: hidden;
+            opacity: 0;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#mmp').mmp({
+                text:'Multiple Month Picker',
+                theme:'a',
+                id:'mmp',
+                months: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                value: []
+            });
+            $('#ok').click(function(){
+                alert($('#mmp').mmp('value'));
+            });
+            $('#load').click(function(){
+                $('#mmp').mmp('value', []);
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="mmp"></div>
+    <button id="ok">OK</button>
+    <button id="load">Load</button>
+</body>
+<!-- https://www.jqueryscript.net/time-clock/jQuery-Mobile-Plugin-For-Multiple-Month-Picker.html -->
+</html>
